@@ -88,7 +88,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git git@github.com:zeff96/blog_app.git
+  git@github.com:zeff96/rails_capstone_project.git
 ```
 
 ### Install
@@ -96,7 +96,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd blog_app
+  cd rails_capstone_project
 
   bundle install
 ```
