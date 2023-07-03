@@ -10,4 +10,6 @@ Rails.application.routes.draw do
       root to: 'home#index', as: :unauthenticated_root
     end
   end
+
+  resources :categories, only: %i[index show new create]
 end
