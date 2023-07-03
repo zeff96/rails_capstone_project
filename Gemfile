@@ -5,7 +5,7 @@ ruby '3.2.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
-gem 'bootstrap-sass', '~> 3.4.1'
+gem 'bootstrap', '~> 5.3.0.alpha3'
 
 gem 'jquery-rails'
 
