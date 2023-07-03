@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.builds.create(category_params)
+    @category = Category.new(category_params)
 
     respond_to do |format|
       if @category.save

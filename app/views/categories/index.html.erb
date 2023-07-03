@@ -3,4 +3,8 @@
   <% @categories.each do |category| %>
     <%= render 'shared/category', category: category %>
   <% end %>
+
+  <div class="d-grid">
+    <%= link_to 'add a new category', new_category_path, class: 'btn btn-primary btn-lg btn-block' %>
+  </div>
 </section>
