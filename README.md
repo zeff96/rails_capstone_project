@@ -57,8 +57,9 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Post comments**
-- **Comment on Posts**
+- **User Authentication**
+- **Item Categories**
+- **Entity Transactions**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
