@@ -9,12 +9,14 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-
+    @category.user = current_user
+    
     respond_to do |format|
       if @category.save
         format.html {redirect_to categories_path, notice: "Category created successfully!"}
         format.json {render json: @category, status: :created}
       else
+        puts @category.errors.full_messages
         format.html {render :new, flash: {error: 'Category not created!' }}
         format.json {render json: @category.errors, status: :unprocessable_entity }
       end
