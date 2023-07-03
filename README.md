@@ -147,7 +147,7 @@ Example:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [x] API authentication
-- [x] API documentation
+- [x] API Authorization
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,7 +157,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/zeff96/blog_app/issues).
+Feel free to check the [issues page](https://github.com/zeff96/rails_capstone_project/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
