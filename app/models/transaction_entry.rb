@@ -3,7 +3,7 @@ class TransactionEntry < ApplicationRecord
   has_many :transaction_categories
   has_many :categories, through: :transaction_categories
 
-  accept_nested_attributes_for :transaction_categories
+  accepts_nested_attributes_for :transaction_categories
 
   validates :name, presence: true
   validates :amount, presence: true
