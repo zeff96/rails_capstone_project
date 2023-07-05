@@ -10,4 +10,9 @@ RSpec.describe 'Transaction_entry', type: :model do
 	scenario 'should be valid' do
 		expect(@transaction_entry).to be_valid
 	end
+
+	scenario 'has correct associations' do
+		transaction = TransactionEntry.reflect_on_association(:user)
+		expect(transaction.macro).to eq(:belongs_to)
+	end
 end
