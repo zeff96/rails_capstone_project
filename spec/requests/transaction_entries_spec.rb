@@ -10,17 +10,30 @@ RSpec.describe 'Transaction_entry', type: :request do
 		sign_in user
 	end
 
-	describe 'GET /Transaction_entries' do
+	describe 'GET /transaction_entries' do
 		before do
 			get "/categories/#{category.id}/transaction_entries"
 		end
 
-		scenario 'responds with success' do
+		it 'responds with success' do
 			expect(response).to have_http_status(:success)
 		end
 
-		scenario 'respond with correct template' do
+		it 'respond with correct template' do
 			expect(response).to render_template(:index)
+		end
+	end
+
+	describe 'POST /Transaction_entries' do
+		before do
+			params = {transaction_entry: {name: 'transaction 1', amount: 200, category_id: category.id}}
+			post "/categories/#{category.id}/transaction_entries", params: params
+		end
+
+		it 'creates a new transaction' do
+			created_transaction = TransactionEntry.last
+
+			expect(created_transaction.name).to eq('transaction 1')
 		end
 	end
 end
