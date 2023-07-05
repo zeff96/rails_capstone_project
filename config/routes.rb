@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :categories, only: %i[index show new create]
-  resources :transaction_entries, only: %i[new create show]
+  resources :categories, only: %i[new create index] do
+    resources :transaction_entries, only: %i[new create index]
+  end
 end

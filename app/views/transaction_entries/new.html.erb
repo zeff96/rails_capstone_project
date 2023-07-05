@@ -1,19 +1,26 @@
-<%= form_with model: (@transaction_entry, url: new_transaction_entries_path, method: :post) do |f| %>
+<br>
+<h2 class="text-center">New Category Transaction</h2>
+<%= form_with(model: @transaction_entry, url: category_transaction_entries_path, method: :post) do |f| %>
 	<div>
 		<%= f.label :name %>
 		<%= f.text_field :name, autofocus: true, autocomplete: "name", class: "form-control" %>
 	</div>
+	<br>
 	<div>
 		<%= f.label :amount %>
 		<%= f.number_field :amount, autofocus: true, autocomplete: "amount", class: "form-control" %>
 	</div>
+	<br>
 	<div>
-		<%= form.fields_for :transaction_categories do |category_fields| %>
-	    <%= category_fields.label :category_id, 'Category' %>
-	    <%= category_fields.collection_select :category_id, Category.all, :id, :name, prompt: true %>
-  	<% end %>
+	  <%= f.label :category_id, 'Category' %>
+	  <%= f.collection_select :category_id, Category.all, :id, :name, prompt: true %>
 	</div>
+	<br>
 	<div class="d-grid">
-		<%= f.submit, "Save" class: 'btn btn-outline-dark' %>
+		<%= f.submit "Save", class: 'btn btn-outline-dark' %>
 	</div>
-end
+<% end %>
+<br>
+<div class="d-grid">
+  <%= link_to 'Back', categories_path, class: 'btn btn-outline-primary' %>
+</div>

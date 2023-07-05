@@ -1,0 +1,21 @@
+<br>
+<section>
+	<h2 class="text-center">DETAILS</h2>
+	<div>
+	  <h1><%= @category.name %> Transactions</h1>
+	  <p>Total Amount: $<%= @total_sum %></p>
+
+	  <% @transaction_entries.each do |transaction| %>
+	    <div>
+	      <h3><%= transaction.name %></h3>
+	      <p>Amount: $<%= transaction.amount %></p>
+	      <hr>
+	    </div>
+	  <% end %>
+	</div>
+
+	<div class="d-grid gap-2">
+		<%= link_to 'Add a New Transaction', new_category_transaction_entry_path(@category), class: 'btn btn-outline-dark' %>
+  	<%= link_to 'Back', categories_path, class: 'btn btn-outline-primary' %>
+	</div>
+</section>
