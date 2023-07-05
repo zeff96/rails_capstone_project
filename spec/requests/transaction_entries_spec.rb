@@ -35,5 +35,10 @@ RSpec.describe 'Transaction_entry', type: :request do
 
 			expect(created_transaction.name).to eq('transaction 1')
 		end
+
+		it 'redirects to transactions page' do
+			created_transaction = TransactionEntry.last
+			expect(response).to redirect_to(category_transaction_entries_path(category.id))
+		end
 	end
 end
