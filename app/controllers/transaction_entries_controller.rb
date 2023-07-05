@@ -24,7 +24,7 @@ class TransactionEntriesController < ApplicationController
 
 		respond_to do |format|
 			if @transaction_entry.save
-				format.html {redirect_to category_transaction_entries_path(@category), notice: 'Transaction created successfully!'}
+				format.html {redirect_to category_transaction_entries_path(category_id), notice: 'Transaction created successfully!'}
 				format.json {render :show, status: :created, location: @transaction_entry}
 			else
 				format.html {render :new, flash: {error: 'Transaction not created!'}}
