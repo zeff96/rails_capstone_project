@@ -18,5 +18,9 @@ RSpec.describe 'Transaction_entry', type: :request do
 		scenario 'responds with success' do
 			expect(response).to have_http_status(:success)
 		end
+
+		scenario 'respond with correct template' do
+			expect(response).to render_template(:index)
+		end
 	end
 end
