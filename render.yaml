@@ -8,7 +8,7 @@ services:
   - type: web
     name: budget_app
     env: ruby
-    buildCommand: "./render-build.sh"
+    buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails s"
     envVars:
       - key: DATABASE_URL
