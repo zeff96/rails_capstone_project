@@ -6,11 +6,20 @@ RSpec.describe 'Category', type: :request do
 	before do
 		user.confirm
 		sign_in user
-		@category = Category.create(user: user, name: 'Foods', icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRf6Tb4EgI0eHpw5VmFrK23BlM2NzvPe_AiPw&usqp=CAU')
+		@category = Category.create(user: user, name: 'Foods', icon: 'https://example.com')
+
 	end
 
-	it 'should respond with success' do
-		get '/categories'
-		expect(response).to have_http_status(:success)
+	describe 'Get /categories' do
+		before do
+			get '/categories'
+		end
+		it 'should respond with success' do
+			expect(response).to have_http_status(:success)
+		end
+
+		it 'responds with correct template' do
+			expect(response).to render_template(:index)
+		end
 	end
 end
