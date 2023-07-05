@@ -1,8 +1,7 @@
 databases:
   - name: postgres
-    ipAllowList: []
-    databaseName: my_app_render
-    user: budget_app
+    databaseName: postgres_a3jx
+    user: postgres_a3jx_user
 
 services:
   - type: web
