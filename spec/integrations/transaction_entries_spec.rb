@@ -18,8 +18,12 @@ RSpec.describe 'Transaction_entry', type: :feature do
 	end
 
 	it 'should display transaction names' do
-		puts page.body
 		expect(page).to have_content('test')
 		expect(page).to have_content('test1')
+	end
+
+	it 'redirects to correct page when clicked' do
+		click_link('Back')
+		expect(page).to have_current_path(categories_path)
 	end
 end
