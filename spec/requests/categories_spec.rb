@@ -32,5 +32,9 @@ RSpec.describe 'Category', type: :request do
 
 			expect(created_category.name).to eq("Foods")
 		end
+
+		scenario 'it redirects to homepage' do
+			expect(response).to redirect_to(categories_path)
+		end
 	end
 end
