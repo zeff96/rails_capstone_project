@@ -19,4 +19,9 @@ RSpec.describe 'Category', type: :feature do
 		expect(page).to have_content('test')
 		expect(page).to have_content('test1')
 	end
+
+	it 'display category icons' do
+		expect(page).to have_css("img[src='#{@category.icon}']")
+		expect(page).to have_css("img[src='#{@category1.icon}']")
+	end
 end
