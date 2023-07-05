@@ -24,4 +24,9 @@ RSpec.describe 'Category', type: :feature do
 		expect(page).to have_css("img[src='#{@category.icon}']")
 		expect(page).to have_css("img[src='#{@category1.icon}']")
 	end
+
+	it 'redirects to correct page on click' do
+		click_link('add a new category')
+		expect(page).to have_current_path(new_category_path)
+	end
 end
