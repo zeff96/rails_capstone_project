@@ -6,8 +6,6 @@ RSpec.describe 'Category', type: :request do
 	before do
 		user.confirm
 		sign_in user
-		@category = Category.create(user: user, name: 'Foods', icon: 'https://example.com')
-
 	end
 
 	describe 'Get /categories' do
@@ -20,6 +18,19 @@ RSpec.describe 'Category', type: :request do
 
 		it 'responds with correct template' do
 			expect(response).to render_template(:index)
+		end
+	end
+
+	describe 'POST /categories' do
+		before do
+			params = {category: {user: user, name: 'Foods', icon: 'https://example.com'}}
+			post '/categories', params: params
+		end
+
+		scenario 'creates a new category' do
+			created_category = Category.last
+
+			expect(created_category.name).to eq("Foods")
 		end
 	end
 end
