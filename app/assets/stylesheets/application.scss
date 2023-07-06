@@ -1,2 +1,11 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+
+.grid_container {
+  display: grid;
+  height: 100vh;
+  align-items: center;
+
+  .grid_one {
+    grid-row: 1/3;
+  }
+}
